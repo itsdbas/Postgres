@@ -1,0 +1,61 @@
+DBA tool for quick query and output, This cover all the database aspect  which are required in day to day Operation. This will standardized the troubleshooting and tuning going forward.
+Use Postgres client version 10 and above...
+
+Postgres Client Details...
+Please use respected version Postgres client when accessing postgres database in AWS / DC
+• psql - Postgres version 9.4 / 9.5 / 9.6
+• psql10 - Postgres version 10.x
+• psql11 - Postgres version 11.x
+• psql12 - Postgres version 12.x
+
+Login to Jump box : bpvlin01-if 
+Connect to database required 
+Type >>> :dba to get below menu option
+
+!!! Postgre-Query-Menu:
+0 – Node & Current DB Information: master/replica, lag, DB size, tmp files, etc
+1 – Databases: Size, Statistics
+2 – Table Sizes
+3 – Load Profile
+4 – Schema: Table / Index Size, Statistics (First connect to Database)
+5 – DB Activity / Running Querys
+6 – Table / Indexes Top 20
+a1 – Current Activity: count of current connections grouped by database, user name, state
+a2 – Current Activity: count of Active / Idle connections grouped by database, user name, state
+a3 – Current Activity: count of Max connections and Database current limit
+b1 – Tables Bloat, rough estimation
+b2 – B-tree Indexes Bloat, rough estimation
+b3 – Tables Bloat, more precise (requires pgstattuple extension; expensive)
+b4 – B-tree Indexes Bloat, more precise (requires pgstattuple extension; expensive)
+b5 – Tables and Columns Without Stats (so bloat cannot be estimated)
+e1 – List of extensions installed in the current DB
+i1 – Unused/Rarely Used Indexes
+i2 – List of redundant indexes
+i3 – FKs with Missing/Bad Indexes
+i4 – List of invalid indexes
+i5 – List All Indexes / Tables size
+l1 – Locks: analysis of "locking trees"
+l2 – Locks: Details of locking
+p1 – [EXPERIMENTAL] Alignment Padding. How many bytes can be saved if columns are ordered better?
+s1 – Slowest Queries, by Total Time (requires pg_stat_statements extension)
+s2 – Slowest Queries Report (requires pg_stat_statements)
+s3 – Slowest Queries Top 20 (requires pg_stat_statements)
+t1 – Postgres parameters tuning
+t2 – Postgres parameters listing
+t3 – Postgres config file listing
+v1 – Vacuum: Current Activity
+v2 – Vacuum: VACUUM progress and autovacuum queue
+q – Quit
+Type your choice and press <Enter>:
+
+How to use :
+
+Login to Database using below command : 
+                                                                                 Ex: psql10 service=recentsales_prod     
+                                                                                 Ex: psql10 -h cpvlin01-db -U postgres
+To Get Menu : type  <<< :dba  
+To Exit Menu : type <<< q
+
+If you need any enhancement and new menu item please let me know...
+
+https://github.com/NikolayS/postgres_dba
